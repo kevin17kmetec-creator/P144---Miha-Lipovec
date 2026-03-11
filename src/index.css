@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .text-3d-white {
+    color: #ffffff;
+    /* Ultra-sharp white matte bevel - using lighter grays to prevent blur on black */
+    text-shadow: 
+      0 1px 0 #f3f4f6,
+      0 2px 0 #e5e7eb,
+      0 3px 0 #d1d5db,
+      0 4px 0 #9ca3af;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .text-3d-orange {
+    color: #f97316;
+    /* Sharp orange matte extrusion */
+    text-shadow: 
+      0 1px 0 #fb923c,
+      0 2px 0 #ea580c,
+      0 3px 0 #c2410c,
+      0 4px 0 #9a3412,
+      0 5px 0 #7c2d12;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .text-3d-white-sm {
+    color: #ffffff;
+    text-shadow: 
+      0 1px 0 #e5e7eb,
+      0 2px 0 #d1d5db;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .text-3d-orange-sm {
+    color: #f97316;
+    text-shadow: 
+      0 1px 0 #ea580c,
+      0 2px 0 #c2410c,
+      0 3px 0 #9a3412;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .btn-3d-orange {
+    @apply bg-orange-500 text-white font-black transition-all duration-150 active:translate-y-[4px] border-t border-orange-400;
+    box-shadow: 0 4px 0 #9a3412;
+    -webkit-font-smoothing: antialiased;
+  }
+  .btn-3d-orange:active {
+    box-shadow: 0 0px 0 #9a3412;
+  }
+  .btn-3d-orange:hover {
+    @apply bg-orange-400;
+  }
+
+  .btn-3d-outline {
+    @apply bg-zinc-800 text-white font-black border border-white/10 transition-all duration-150 active:translate-y-[4px] border-t border-zinc-700;
+    box-shadow: 0 4px 0 #09090b;
+    -webkit-font-smoothing: antialiased;
+  }
+  .btn-3d-outline:active {
+    box-shadow: 0 0px 0 #09090b;
+  }
+  .btn-3d-outline:hover {
+    @apply bg-zinc-700;
+  }
+}
